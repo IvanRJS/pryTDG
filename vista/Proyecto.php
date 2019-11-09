@@ -89,6 +89,7 @@
         <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
     </div>
     </form>
+   
   <!--FIN FORM BOOTSTRAP -->
 </body>
 </html>

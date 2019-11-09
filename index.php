@@ -21,4 +21,14 @@
 
 
 </body>
+<!-- Footer -->
+<footer class="page-footer font-small fixed-bottom">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Instituto Tecnológico Metropolitano.
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </html>
