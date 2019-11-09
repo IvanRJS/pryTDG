@@ -107,7 +107,9 @@ class ControlUsuario_Sesion{
 
         $comSql="SELECT * FROM usuario_sesion where usuario ='$usuario' AND clave='$clave'";
         if($result=$objCtrCon->ejecutarQuery($comSql)){
-            return true;
+            if(mysqli_num_rows($result)>0 ){
+                return true;
+            }
         }else{
             return false;
         }
