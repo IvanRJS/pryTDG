@@ -1,0 +1,25 @@
+.btn-orange {
+    background-color: #F4811E;
+    color: #fff;
+}
+
+.btn-orange:hover {
+    background-color: #fff;
+    color: #F4811E;
+    border-style: solid 1px;
+    border-color: #F4811E;
+}
+
+.title-orange {
+    color: #F4811E;
+}
+
+.nav-link {
+    color: #F4811E !important;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    color: #F4811E !important;
+    font-size: 24px;
+}

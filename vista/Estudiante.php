@@ -7,6 +7,7 @@
     <title>Estudiante</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
     <script>
     
     
@@ -15,12 +16,10 @@
 <body>
 <?php include("header.php"); ?>
     <!--INICIO FORM BOOTSTRAP -->
-    <h4 class="text-center">CRUD Estudiante</h4>
+    <h1 class="text-center title-orange">CRUD Estudiante</h1>
 <form style="margin: 20px 0px 0px 30px;" action="VistaEstudiante.php" method="POST">
         <div class="row">
-
                 <div class="col-md-6">
-                        
                         <div class="form-group">
                         <label for="txtId" class="col-md-2">ID</label>
                         <input type="text" class="form-control-inline col-md-7" name="txtId" id="txtId"  placeholder="ID" onkeypress="return validarNumeros(event);" required>
@@ -62,10 +61,10 @@
 </div>
 <div style="margin:0 0 0 37%">
 
-        <input type="submit" class="btn btn-info" name="boton" value="Guardar">
-        <input type="submit" class="btn btn-info" name="boton" value="Consultar">
-        <input type="submit" class="btn btn-info" name="boton" value="Actualizar">
-        <input type="submit" class="btn btn-info" name="boton" value="Eliminar">
+        <input type="submit" class="btn btn-orange" name="boton" value="Guardar">
+        <input type="submit" class="btn btn-orange" name="boton" value="Consultar">
+        <input type="submit" class="btn btn-orange" name="boton" value="Actualizar">
+        <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
 </div>
 </form>
 <!--FIN FORM BOOTSTRAP -->

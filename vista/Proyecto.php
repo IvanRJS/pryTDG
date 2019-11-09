@@ -7,11 +7,12 @@
     <title>Proyecto</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
    <?php include("header.php"); ?>
     <!--INICIO FORM BOOTSTRAP -->
-    <h3 class="col-md-6 text-right">CRUD Proyecto</h3>
+    <h1 class="text-center title-orange">CRUD Proyecto</h1>
     <form id="form1" style="margin: 25px 0 0 0;" action="VistaProyecto.php" method="POST" >
 
     <div class="row">
@@ -86,10 +87,10 @@
 
 <input type="hidden" id="btnHidden" name="boton" value="">
 <div style="margin:5px 0 0 35%">
-        <input type="button" class="btn btn-info" name="boton" value="Guardar"  onclick="validarFechas(this);">
-        <input type="submit" class="btn btn-info" name="boton" value="Consultar">
-        <input type="button" class="btn btn-info" name="boton" value="Actualizar" onclick="validarFechas(this);">
-        <input type="submit" class="btn btn-info" name="boton" value="Eliminar">
+        <input type="button" class="btn btn-orange" name="boton" value="Guardar"  onclick="validarFechas(this);">
+        <input type="submit" class="btn btn-orange" name="boton" value="Consultar">
+        <input type="button" class="btn btn-orange" name="boton" value="Actualizar" onclick="validarFechas(this);">
+        <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
     </div>
     </form>
   <!--FIN FORM BOOTSTRAP -->
