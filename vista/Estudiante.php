@@ -13,6 +13,7 @@
     </script>
 </head>
 <body>
+<?php include("header.php"); ?>
     <!--INICIO FORM BOOTSTRAP -->
     <h4 class="text-center">CRUD Estudiante</h4>
 <form style="margin: 20px 0px 0px 30px;" action="VistaEstudiante.php" method="POST">

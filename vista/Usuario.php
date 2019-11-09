@@ -10,6 +10,7 @@
     
 </head>
 <body>  
+<?php include("header.php"); ?>
     <!--INICIO BARRA DE NAVEGACION-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="../index.php">Inicio</a>

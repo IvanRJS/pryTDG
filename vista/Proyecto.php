@@ -9,7 +9,7 @@
     <script src="../js/scripts.js"></script>
 </head>
 <body>
-   
+   <?php include("header.php"); ?>
     <!--INICIO FORM BOOTSTRAP -->
     <h3 class="col-md-6 text-right">CRUD Proyecto</h3>
     <form id="form1" style="margin: 25px 0 0 0;" action="VistaProyecto.php" method="POST" >

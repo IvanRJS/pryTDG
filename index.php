@@ -10,11 +10,11 @@
 <h2 class="text-center mt-5">Proyecto TDG</h2>
 <body>
     <div class="text-center mt-5">
-        <a href="vista/Proyecto.html" class="btn btn-info">CRUD Proyecto</a>
-        <a href="vista/Estudiante.html" class="btn btn-info">CRUD Estudiante</a>
-        <a href="vista/Persona.html" class="btn btn-info">CRUD Persona</a>
-        <a href="vista/Cofinanciador.html" class="btn btn-info">CRUD Cofinanciador</a>
-        <a href="vista/Usuario.html" class="btn btn-info">CRUD Usuario</a>
+        <a href="vista/Proyecto.php" class="btn btn-info">CRUD Proyecto</a>
+        <a href="vista/Estudiante.php" class="btn btn-info">CRUD Estudiante</a>
+        <a href="vista/Persona.php" class="btn btn-info">CRUD Persona</a>
+        <a href="vista/Cofinanciador.php" class="btn btn-info">CRUD Cofinanciador</a>
+        <a href="vista/Usuario.php" class="btn btn-info">CRUD Usuario</a>
     </div>
 
 

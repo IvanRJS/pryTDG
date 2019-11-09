@@ -20,7 +20,7 @@ function guardar(){
     $tipo=$this->objProyecto->getTipoProyecto();
     
 
-$comandoSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechaini, fechafin, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo')";
+$comandoSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechafin, fechaini, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo')";
 
 $objCtrCon= new CtrConexion();
 $objCtrCon->conectar("localhost", "root", "","BDTDG");
