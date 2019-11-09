@@ -40,7 +40,7 @@ if(isset($_SESSION['usuario'])){
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link mr-auto" href="#">Login</a>
+            <a class="nav-link mr-auto" href="vista/Login.php">Login</a>
         </li>
     </ul>
 </div>

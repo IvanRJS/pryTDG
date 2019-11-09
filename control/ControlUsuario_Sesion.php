@@ -97,7 +97,22 @@ class ControlUsuario_Sesion{
 
     }
 
+    function validarLogin(){
+        $objCtrCon= new CtrConexion();
+        $objCtrCon->conectar("localhost", "root", "","bdtdg");
 
+        $usuario=$this->objUsuario_Sesion->getUsuario();
+        $clave=$this->objUsuario_Sesion->getClave();
+        
+
+        $comSql="SELECT * FROM usuario_sesion where usuario ='$usuario' AND clave='$clave'";
+        if($result=$objCtrCon->ejecutarQuery($comSql)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
 }
 

@@ -1,6 +1,7 @@
 .btn-orange {
     background-color: #F4811E;
     color: #fff;
+    border-color: #F4811E;
 }
 
 .btn-orange:hover {
@@ -27,4 +28,35 @@
 footer {
     background-color: #343A40;
     color: #F4811E;
+}
+
+.login-form {
+    width: 430px;
+    margin: 50px auto;
+}
+
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7b4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 30px;
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.form-control,
+.btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.btn-login:active {
+    background-color: #F4811E;
+    color: #fff;
 }
