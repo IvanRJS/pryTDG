@@ -90,16 +90,17 @@ function consultar(){
     $info="";
     if($result=$objCtrCon->ejecutarQuery($comSql)){
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    $info= "Titulo: ".$row['titulo']."<br>".
-            "Fecha inscripcion: ".$row['fechaInsc']."<br>".
-            "Fecha Inicio: ".$row['fechaini']."<br>".
-            "Fecha Fin: ".$row['fechafin']."<br>".
-            "Cofinanciado: ".$row['cofinanciado']."<br>".
-            "Presupuesto: ".$row['presupuesto']."<br>".
-            "Porcentaje Cofinanciado: ".$row['porccof']."<br>".
-            "Estado: ".$row['estado']."<br>".
-            "Observaciones: ".$row['observaciones']."<br>".
-            "Tipo proyecto: ".$row['tipo_proyecto']."<br>";
+    $info= ["id"=>$row['id_proyecto'],
+            "titulo"=>$row['titulo'],
+            "fechaIns"=>$row['fechaInsc'],
+            "fechaIni"=>$row['fechaini'],
+            "fechaFin"=>$row['fechafin'],
+            "cofinanciado"=>$row['cofinanciado'],
+            "presupuesto"=>$row['presupuesto'],
+            "porcentaje"=>$row['porccof'],
+            "estado"=>$row['estado'],
+            "observaciones"=>$row['observaciones'],
+            "tipo"=>$row['tipo_proyecto']];
         
         
     }else{

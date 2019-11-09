@@ -45,10 +45,6 @@
                     <label class="form-check-label" for="txtNo">No</label>
                 </div>
             </div>
-            
-            
-            
-        
         <div class="form-group">
             <label for="txtPorc" class="col-md-2">Porcentaje Cofinanciado</label>
             <input type="number" class="form-control-inline col-md-7" name="txtPorc" id="txtPorc" placeholder="Porcentaje Cofinanciado" max="100" min="0" onkeypress="return validarNumeros(event);" required>

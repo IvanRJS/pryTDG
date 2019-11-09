@@ -11,15 +11,7 @@
 </head>
 <body>  
 <?php include("header.php"); ?>
-    <!--INICIO BARRA DE NAVEGACION-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="../index.php">Inicio</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-          </nav>
-<!--FIN BAR-->
-
+   
 <!--INICIO FORM BOOTSTRAP -->
 <form style="margin: 20px 0 0 30px;" action="VistaUsuario_Sesion.php" method="POST">
         <h3 class="title-orange">CRUD Usuario</h3>
