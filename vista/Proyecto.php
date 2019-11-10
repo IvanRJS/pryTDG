@@ -26,10 +26,7 @@
                 <label for="txtTitulo" class="col-md-2">Título</label>
                 <input type="text" class="form-control-inline col-md-7" name="txtTitulo" id="txtTitulo" placeholder="Título" required>
             </div>
-            <div class="form-group">
-                <label for="txtUsuario" class="col-md-2">Nombres</label>
-                <input type="text" class="form-control-inline col-md-7" name="txtUsuario" id="txtUsuario" placeholder="Nombres" required>
-            </div>
+           
             <div class="form-group">
                 <label for="Presupuesto" class="col-md-2">Presupuesto</label>
                 <input type="text" class="form-control-inline col-md-7" name="txtPre" id="txtPre" placeholder="Presupuesto" onkeypress="return validarNumeros(event);" required>
@@ -85,7 +82,7 @@
 <input type="hidden" id="btnHidden" name="boton" value="">
 <div style="margin:5px 0 0 35%">
         <input type="button" class="btn btn-orange" name="boton" value="Guardar"  onclick="validarFechas(this);">
-        <input type="submit" class="btn btn-orange" name="boton" value="Consultar">
+        <input type="button" class="btn btn-orange" name="boton" value="Consultar" onclick="quitarRequired(this);">
         <input type="button" class="btn btn-orange" name="boton" value="Actualizar" onclick="validarFechas(this);">
         <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
     </div>

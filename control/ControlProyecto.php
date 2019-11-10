@@ -20,16 +20,17 @@ function guardar(){
     $tipo=$this->objProyecto->getTipoProyecto();
     
 
-$comandoSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechafin, fechaini, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo')";
+$comSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechafin, fechaini, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo')";
 
 $objCtrCon= new CtrConexion();
 $objCtrCon->conectar("localhost", "root", "","BDTDG");
-if($objCtrCon->ejecutarQuery($comandoSql)){
-    echo "Datos Guardados";
-}else{
-    echo "error, no se gurdaron los datos";
+
+if($objCtrCon->ejecutarQuery($comSql)){
+    $objCtrCon->cerrar();
+    return true;
 }
-$objCtrCon->cerrar();
+    $objCtrCon->cerrar();
+    return false;
 
 }
 
@@ -54,13 +55,11 @@ $comSql="UPDATE PROYECTO SET TITULO='$titulo',FECHAINSC='$fins',FECHAFIN='$ffin'
 
 
 if($objCtrCon->ejecutarQuery($comSql)){
-    echo "Datos Actualizados";
-}else{
-    echo "error";
+    $objCtrCon->cerrar();
+    return true;
 }
-
-$objCtrCon->cerrar();
-
+    $objCtrCon->cerrar();
+    return false;
 }
 
 function eliminar(){
@@ -70,14 +69,13 @@ function eliminar(){
 
     $comSql="DELETE FROM proyecto WHERE id_proyecto = $id";
   
- 
-    if($objCtrCon->ejecutarQuery($comSql)){
-        echo "Datos eliminados";
-    }else{
-        echo "error";
-    }
 
-    $objCtrCon->cerrar();
+    if($objCtrCon->ejecutarQuery($comSql)){
+        $objCtrCon->cerrar();
+        return true;
+    }
+        $objCtrCon->cerrar();
+        return false;
 } 
 
 function consultar(){

@@ -94,7 +94,7 @@ class ControlUsuario_Sesion{
         }else{
             echo"No existe el registo.";
         }
-
+        $objCtrCon->cerrar();
     }
 
     function validarLogin(){
@@ -108,9 +108,11 @@ class ControlUsuario_Sesion{
         $comSql="SELECT * FROM usuario_sesion where usuario ='$usuario' AND clave='$clave'";
         if($result=$objCtrCon->ejecutarQuery($comSql)){
             if(mysqli_num_rows($result)>0 ){
+                $objCtrCon->cerrar();
                 return true;
             }
         }else{
+            $objCtrCon->cerrar();
             return false;
         }
 

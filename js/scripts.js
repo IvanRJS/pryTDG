@@ -1,3 +1,12 @@
+function consultarDatos(btn) {
+    quitarRequired();
+    document.getElementById('txtFf').setCustomValidity("");
+    if (document.getElementById('form1').reportValidity()) {
+        document.getElementById('btnHidden').value = btn.value;
+        document.getElementById('form1').submit();
+    }
+}
+
 function validarNumeros(e) {
     var keynum = window.event ? window.event.keyCode : e.which;
     //keynum 46 -> delete ,  keynum 8-> backspace
@@ -17,8 +26,7 @@ function validarLetras(e) {
 }
 
 function validarFechas(btn) {
-    //mostrar mensajes de validacion de inputs
-    document.getElementById('form1').reportValidity();
+    agregarRequired();
     //tomar los valores de los input fecha
     var inicio = new Date(document.getElementById('txtFi').value);
     var fin = new Date(document.getElementById('txtFf').value);
@@ -29,21 +37,41 @@ function validarFechas(btn) {
     } else {
         document.getElementById('txtFf').setCustomValidity("La fecha final debe ser posterior a la fecha de inicio.");
     }
+    //mostrar mensajes de validacion de inputs
+    document.getElementById('form1').reportValidity();
 }
 
 window.onload = function() {
-    // [...document.getElementsByClassName("nav-link")]
     var page = window.location.pathname;
-
-    links = document.getElementsByClassName("nav-link");
-    [].slice.call(links).forEach(function(link) {
-
+    [...document.getElementsByClassName("nav-link")].forEach(function(link) {
         if ((page.includes("vista"))) {
             link.href = link.href.replace("vista/", "");
-        } else {
-
         }
     });
 
+}
 
+
+
+function quitarRequired() {
+    [...document.getElementById("form1").elements].forEach(function(element) {
+        if (element.id != "txtId") {
+            console.log(element.id);
+            element.required = false;
+        } else {
+            element.required = true;
+        }
+    });
+
+}
+
+function agregarRequired() {
+    [...document.getElementById("form1").elements].forEach(function(element) {
+        if (element.id != "txtId") {
+            console.log(element.id);
+            element.required = true;
+        } else {
+            element.required = false;
+        }
+    });
 }
