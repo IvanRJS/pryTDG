@@ -3,29 +3,29 @@
     session_start();
 }
 #Barra de navegacion si está logeado
-if(isset($_SESSION['usuario'])){
+if(isset($_SESSION['user'])){
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="#">Navbar</a>
+<a class="navbar-brand" href="../index.php">Inicio</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">Estudiantes</a>
+            <a class="nav-link" href="vista/Estudiante.php">Estudiantes</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Personas</a>
+            <a class="nav-link" href="vista/Persona.php">Personas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Proyecto</a>
+            <a class="nav-link" href="vista/Proyecto.php">Proyecto</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Cofinanciador</a>
+            <a class="nav-link" href="vista/Cofinanciador.php">Cofinanciador</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="vista/Logout.php">Cerrar sesión</a>
+            <a class="nav-link" href="vista/CerrarSesion.php">Cerrar sesión</a>
         </li>
     </ul>
 </div>
@@ -36,7 +36,7 @@ if(isset($_SESSION['usuario'])){
 } else { ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="../index.php">Home</a>
+<a class="navbar-brand" href="#">pryTDG</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>

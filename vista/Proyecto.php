@@ -74,6 +74,7 @@
         <label for="txtFf" class="col-md-2">Fecha de fin</label>
         <input type="date" class="form-control-inline col-md-7" name="txtFf" id="txtFf" required>
     </div>
+    
     <div class="form-group">
         <label for="txtObs" class="col-md-2">Observaciones</label>
         <textarea class="form-control-inline col-md-7" name="txtObs" id="txtObs" cols="15" rows="5"></textarea>

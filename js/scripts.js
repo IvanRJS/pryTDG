@@ -30,3 +30,20 @@ function validarFechas(btn) {
         document.getElementById('txtFf').setCustomValidity("La fecha final debe ser posterior a la fecha de inicio.");
     }
 }
+
+window.onload = function() {
+    // [...document.getElementsByClassName("nav-link")]
+    var page = window.location.pathname;
+
+    links = document.getElementsByClassName("nav-link");
+    [].slice.call(links).forEach(function(link) {
+
+        if ((page.includes("vista"))) {
+            link.href = link.href.replace("vista/", "");
+        } else {
+
+        }
+    });
+
+
+}

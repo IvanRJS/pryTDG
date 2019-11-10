@@ -55,8 +55,3 @@ footer {
 .btn {
     font-weight: bold;
 }
-
-.btn-login:active {
-    background-color: #F4811E;
-    color: #fff;
-}

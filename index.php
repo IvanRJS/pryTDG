@@ -9,7 +9,9 @@
     <title>pryTDG</title>
 </head>
 <body>
-    <?php include("vista/header.php"); ?>
+    <?php 
+    
+    include("vista/header.php"); ?>
     <h1 class="text-center mt-5 title-orange">Proyecto TDG</h1>
     <div class="text-center mt-5">
         <a href="vista/Proyecto.php" class="btn btn-orange">CRUD Proyecto</a>
@@ -19,7 +21,7 @@
         <a href="vista/Usuario.php" class="btn btn-orange">CRUD Usuario</a>
     </div>
 
-
+<script src="js/scripts.js"></script>
 </body>
 <!-- Footer -->
 <footer class="page-footer font-small fixed-bottom">
