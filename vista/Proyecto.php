@@ -82,7 +82,7 @@
 <input type="hidden" id="btnHidden" name="boton" value="">
 <div style="margin:5px 0 0 35%">
         <input type="button" class="btn btn-orange" name="boton" value="Guardar"  onclick="validarFechas(this);">
-        <input type="button" class="btn btn-orange" name="boton" value="Consultar" onclick="quitarRequired(this);">
+        <input type="button" class="btn btn-orange" name="boton" value="Consultar" onclick="consultarDatos(this);">
         <input type="button" class="btn btn-orange" name="boton" value="Actualizar" onclick="validarFechas(this);">
         <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
     </div>

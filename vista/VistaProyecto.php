@@ -8,8 +8,10 @@ if(!isset($_POST['boton'])){
 include("../modelo/Proyecto.php");
 include("../control/ControlProyecto.php");
 include("../control/CtrConexion.php");
+#mensajes de exito o error
 $success="";
 $fail="";
+#valores de inputs
 $bot=$_POST['boton'];
 $id=$_POST['txtId'];
 $titulo=$_POST['txtTitulo'];
@@ -144,6 +146,7 @@ if($bot=="Actualizar"){
 </div>
 
 <?php 
+#mostrar mensajes (si hay) de exito o error al dar click en guardar,actualizar o eliminar
 echo ($success!="")?'<p class="text-center font-weight-bold text-success">'.$success.'</p>':"";
 $success="";
 echo ($fail!="")?'<p class="text-center font-weight-bold text-danger">'.$fail.'</p>':"";

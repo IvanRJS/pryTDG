@@ -42,7 +42,9 @@ function validarFechas(btn) {
 }
 
 window.onload = function() {
+    //leer la url de la pagina actual
     var page = window.location.pathname;
+    //recorrer cada link de la barra de navegacion
     [...document.getElementsByClassName("nav-link")].forEach(function(link) {
         if ((page.includes("vista"))) {
             link.href = link.href.replace("vista/", "");
