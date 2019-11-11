@@ -14,10 +14,17 @@
         session_start();
     }
     include("vista/header.php"); ?>
-    <h1 class="text-center mt-5 title-orange">Proyecto TDG</h1>
+    <?php if(isset($_SESSION['usuario'])){ ?>
+      
+        <h1 class="text-center mt-5 title-orange">¡ Hola <?php echo $_SESSION['usuario']; ?> ! <br>Bienvenido al proyecto TDG</h1>
+
+
+    <?php }else{ ?>
+
+        <h1 class="text-center mt-5 title-orange">Proyecto TDG</h1>
     <div class="login-form">
     <form action="vista/ValidarLogin.php" method="post">
-        <h2 class="text-center">Log in</h2>       
+        <h2 class="text-center title-orange">Log in</h2>       
         <div class="form-group">
             <input type="text" class="form-control" name="user" id="user"  placeholder="Username" required="required">
         </div>
@@ -34,6 +41,8 @@
     </form>
    
 </div>
+    <?php } ?>
+    
    
 
 <script src="js/scripts.js"></script>

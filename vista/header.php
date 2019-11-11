@@ -11,7 +11,7 @@ if(isset($_SESSION['usuario'])){
   <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" href="vista/Estudiante.php">Estudiantes</a>
         </li>
@@ -24,11 +24,13 @@ if(isset($_SESSION['usuario'])){
         <li class="nav-item">
             <a class="nav-link" href="vista/Cofinanciador.php">Cofinanciador</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="vista/CerrarSesion.php">Cerrar sesión</a>
-        </li>
     </ul>
-</div>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link " href="vista/CerrarSesion.php">Cerrar sesión</a>
+        </li>
+        </ul>
+   </div>
 </nav>
 
 <?php 
