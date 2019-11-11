@@ -10,16 +10,31 @@
 </head>
 <body>
     <?php 
-    
+    if(!isset($_SESSION)){
+        session_start();
+    }
     include("vista/header.php"); ?>
     <h1 class="text-center mt-5 title-orange">Proyecto TDG</h1>
-    <div class="text-center mt-5">
-        <a href="vista/Proyecto.php" class="btn btn-orange">CRUD Proyecto</a>
-        <a href="vista/Estudiante.php" class="btn btn-orange">CRUD Estudiante</a>
-        <a href="vista/Persona.php" class="btn btn-orange">CRUD Persona</a>
-        <a href="vista/Cofinanciador.php" class="btn btn-orange">CRUD Cofinanciador</a>
-        <a href="vista/Usuario.php" class="btn btn-orange">CRUD Usuario</a>
-    </div>
+    <div class="login-form">
+    <form action="vista/ValidarLogin.php" method="post">
+        <h2 class="text-center">Log in</h2>       
+        <div class="form-group">
+            <input type="text" class="form-control" name="user" id="user"  placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="pass" id="pass" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info btn-block btn-orange btn-login">Log in</button>
+        </div>
+        <div class="clearfix">
+            <label class="float-left checkbox-inline"><input type="checkbox"> Remember me</label>
+            <a href="#" class="float-right">Forgot Password?</a>
+        </div>        
+    </form>
+   
+</div>
+   
 
 <script src="js/scripts.js"></script>
 </body>
