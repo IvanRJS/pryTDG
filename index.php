@@ -14,12 +14,11 @@
         session_start();
     }
     include("vista/header.php"); ?>
-    <?php if(isset($_SESSION['usuario'])){ ?>
+    <?php if(isset($_SESSION['usuario'])): ?>
       
         <h1 class="text-center mt-5 title-orange">¡ Hola <?php echo $_SESSION['usuario']; ?> ! <br>Bienvenido al proyecto TDG</h1>
 
-
-    <?php }else{ ?>
+    <?php else: ?>
 
         <h1 class="text-center mt-5 title-orange">Proyecto TDG</h1>
     <div class="login-form">
@@ -41,7 +40,8 @@
     </form>
    
 </div>
-    <?php } ?>
+
+    <?php endif; ?>
     
    
 
