@@ -23,9 +23,9 @@ $info=$objCtrUsuario->validarLogin();
 if($info!=null){
     $_SESSION['usuario']=$info['usuario'];
     $_SESSION['privilegios']=$info['privilegios'];
-    header("location: ../index.php#menu");
+    header("location: ../index.php");
 }else{
-    header("location: Login.php");
+    header("location: ../index.php");
 }
 
 

@@ -7,6 +7,14 @@ function consultarDatos(btn) {
     }
 }
 
+function consultarDatos2(btn) {
+    quitarRequired();
+    if (document.getElementById('form1').reportValidity()) {
+        document.getElementById('btnHidden').value = btn.value;
+        document.getElementById('form1').submit();
+    }
+}
+
 function validarNumeros(e) {
     var keynum = window.event ? window.event.keyCode : e.which;
     //keynum 46 -> delete ,  keynum 8-> backspace
@@ -76,4 +84,8 @@ function agregarRequired() {
             element.required = false;
         }
     });
+}
+
+function validar() {
+    document.getElementById('form1').reportValidity();
 }

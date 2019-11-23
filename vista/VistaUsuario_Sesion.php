@@ -1,4 +1,14 @@
 <?php 
+if(!isset($_SESSION)){
+    session_start();
+}
+if(!isset($_SESSION['usuario'])):
+    header("location:../index.php");
+endif;
+
+if(!isset($_POST['boton'])){
+    header("location: Proyecto.php");
+}
 include("../modelo/Usuario_Sesion.php");
 include("../control/ControlUsuario_Sesion.php");
 include("../control/CtrConexion.php");

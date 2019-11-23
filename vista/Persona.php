@@ -1,3 +1,11 @@
+<?php 
+    if(!isset($_SESSION)):
+        session_start();
+    endif;
+    if(!isset($_SESSION['usuario'])):
+        header("location:../index.php");
+    endif;
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,13 +14,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Persona</title>
-    <script src="../js/scripts.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
 </head>
 <body>
 <?php include("header.php"); ?>
     <!--INICIO FORMULARIO BOOTSTRAP-->
-    <form style="margin: 20px 0px 0px 30px;" action="VistaPersona.php" method="POST">
+    <form id="form1" style="margin: 20px 0px 0px 30px;" action="VistaPersona.php" method="POST">
             <h1 class="title-orange">CRUD Persona</h1>
             <div class="form-group">
                 <label for="txtId" class="col-md-2">ID</label>
@@ -39,10 +47,10 @@
                 <input type="text" class="form-control-md" name="txtTipo" id="txtTipo" placeholder="Tipo" maxlength="3" required>
             </div>
              
-            
-                <input type="submit" class="btn btn-orange" name="boton" value="Guardar">
-              <input type="submit" class="btn btn-orange" name="boton" value="Consultar">
-              <input type="submit" class="btn btn-orange" name="boton" value="Actualizar">
+            <input type="hidden" id="btnHidden" name="boton" value="">
+                <input type="submit" class="btn btn-orange" name="boton" value="Guardar" onclick="agregarRequired();validar();">
+              <input type="submit" class="btn btn-orange" name="boton" value="Consultar" onclick="consultarDatos2(this);">
+              <input type="submit" class="btn btn-orange" name="boton" value="Actualizar"onclick="agregarRequired();validar();">
               <input type="submit" class="btn btn-orange" name="boton" value="Eliminar">
           </form>
     <!--FIN FORMULARIO BOOTSTRAP-->
