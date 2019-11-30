@@ -18,9 +18,11 @@ function guardar(){
     $est=$this->objProyecto->getEstado();
     $obs=$this->objProyecto->getObservaciones();
     $tipo=$this->objProyecto->getTipoProyecto();
+    $producto=$this->objProyecto->getIdProducto();
     
 
-$comSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechafin, fechaini, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo')";
+    $comSql="INSERT INTO PROYECTO (titulo, fechaInsc, fechafin, fechaini, cofinanciado, presupuesto, porccof, estado, observaciones, tipo_proyecto, id_producto) VALUES ('$titulo','$fins','$ffin','$fini','$cof',$pre,$pcof,'$est','$obs','$tipo','$producto')";
+ 
 
 $objCtrCon= new CtrConexion();
 $objCtrCon->conectar("localhost", "root", "","BDTDG");
@@ -50,8 +52,9 @@ function actualizar(){
     $obs=$this->objProyecto->getObservaciones();
     $tipo=$this->objProyecto->getTipoProyecto();
     $tipo=$this->objProyecto->getTipoProyecto();
+    $producto=$this->objProyecto->getIdProducto();
 
-$comSql="UPDATE PROYECTO SET TITULO='$titulo',FECHAINSC='$fins',FECHAFIN='$ffin',FECHAINI='$fini',COFINANCIADO='$cof',PRESUPUESTO='$pre',PORCCOF='$pcof',ESTADO='$est',OBSERVACIONES='$obs',TIPO_PROYECTO='$tipo' where id_proyecto=$id";
+$comSql="UPDATE PROYECTO SET TITULO='$titulo',FECHAINSC='$fins',FECHAFIN='$ffin',FECHAINI='$fini',COFINANCIADO='$cof',PRESUPUESTO='$pre',PORCCOF='$pcof',ESTADO='$est',OBSERVACIONES='$obs',TIPO_PROYECTO='$tipo', ID_PRODUCTO='$producto' where id_proyecto=$id";
 
 
 if($objCtrCon->ejecutarQuery($comSql)){
@@ -98,7 +101,8 @@ function consultar(){
             "porcentaje"=>$row['porccof'],
             "estado"=>$row['estado'],
             "observaciones"=>$row['observaciones'],
-            "tipo"=>$row['tipo_proyecto']];
+            "tipo"=>$row['tipo_proyecto'],
+            "producto"=>$row['id_producto']];
         
         
     }else{

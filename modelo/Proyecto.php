@@ -13,8 +13,9 @@ var $porcCof;
 var $estado;
 var $observaciones;
 var $tipoProyecto;
+var $idProducto;
 
-function __construct($id, $titulo, $fechaInsc, $fechaFin, $fechaIni, $cofinanciado, $presupuesto, $porcCof, $estado, $observaciones, $tipoProyecto) {
+function __construct($id, $titulo, $fechaInsc, $fechaFin, $fechaIni, $cofinanciado, $presupuesto, $porcCof, $estado, $observaciones, $tipoProyecto, $idProducto) {
     $this->id = $id;
     $this->titulo = $titulo;
     $this->fechaInsc = $fechaInsc;
@@ -26,6 +27,7 @@ function __construct($id, $titulo, $fechaInsc, $fechaFin, $fechaIni, $cofinancia
     $this->estado = $estado;
     $this->observaciones = $observaciones;
     $this->tipoProyecto = $tipoProyecto;
+    $this->idProducto = $idProducto;
 }
 
 function getId() {
@@ -72,6 +74,10 @@ function getTipoProyecto() {
     return $this->tipoProyecto;
 }
 
+function getIdProducto() {
+    return $this->idProducto;
+}
+
 function setId($id) {
     $this->id = $id;
 }
@@ -116,6 +122,9 @@ function setTipoProyecto($tipoProyecto) {
     $this->tipoProyecto = $tipoProyecto;
 }
 
+function setIdProducto($idProducto) {
+    $this->idProducto = $idProducto;
+}
 
 
 }

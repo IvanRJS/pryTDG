@@ -6,6 +6,16 @@
         header("location:../index.php");
     endif;
     ?>
+    <?php
+
+include("../modelo/Producto.php");
+include("../control/ControlProducto.php");
+include("../control/CtrConexion.php");
+    $objProducto=new Producto("", "", "");
+    $objCtrProducto=new controlProducto($objProducto);
+    $productos = $objCtrProducto->consultar();
+   
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,6 +68,21 @@
             <label for="txtEstado" class="col-md-2">Estado</label>
             <input type="text" class="form-control-inline col-md-7" name="txtEstado" id="txtEstado" placeholder="Estado" maxlength="20" required>
         </div>  
+        <div class="form-group">
+        <label class="col-md-2" for="producto">Producto</label>
+      <select class="form-control-inline col-md-7" id="producto" name="producto">
+      <option value="">Seleccione un producto</option>
+      <?php
+        $i=0;
+        foreach ($productos as $producto) { ?>
+             <option value="<?php echo $producto[0]; ?>"><?php echo $producto[2]; ?></option>
+        <?php 
+           
+        }
+      ?>
+        
+      </select>
+        </div>
     </div>
      <div class="col-md-6">
     

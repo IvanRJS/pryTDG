@@ -11,6 +11,8 @@ if(!isset($_POST['boton'])){
 }
 include("../modelo/Proyecto.php");
 include("../control/ControlProyecto.php");
+include("../modelo/Producto.php");
+include("../control/ControlProducto.php");
 include("../control/CtrConexion.php");
 #mensajes de exito o error
 $success="";
@@ -28,10 +30,11 @@ $porcCof=$_POST['txtPorc'];
 $estado=$_POST['txtEstado'];
 $observaciones=$_POST['txtObs'];
 $tipoProyecto=$_POST['txtTipo'];
+$producto=$_POST['producto']??'';
 
 
 if($bot=="Guardar"){
-    $objProyecto=new Proyecto($id, $titulo, $fechaInsc, $fechaFin, $fechaIni, $cofinanciado, $presupuesto, $porcCof, $estado, $observaciones, $tipoProyecto);
+    $objProyecto=new Proyecto($id, $titulo, $fechaInsc, $fechaFin, $fechaIni, $cofinanciado, $presupuesto, $porcCof, $estado, $observaciones, $tipoProyecto,$producto);
     $objCtrProyecto=new ControlProyecto($objProyecto);
     if($objCtrProyecto->guardar()){
         $success= "Datos guardados correctamente";

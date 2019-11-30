@@ -5,16 +5,13 @@ class Producto{
     var $fecha;
     var $categoria_producto;
 
-    function __construct($id_proyecto, $id_producto, $fecha, $categoria_producto) {
-        $this->id_proyecto = $id_proyecto;
+    function __construct($id_producto, $fecha, $categoria_producto) {
         $this->id_producto = $id_producto;
         $this->fecha = $fecha;
         $this->categoria_producto = $categoria_producto;
     }
 
-    function getId_proyecto() {
-        return $this->id_proyecto;
-    }
+    
 
     function getId_producto() {
         return $this->id_producto;
@@ -28,9 +25,6 @@ class Producto{
         return $this->categoria_producto;
     }
 
-    function setId_proyecto($id_proyecto) {
-        $this->id_proyecto = $id_proyecto;
-    }
 
     function setId_producto($id_producto) {
         $this->id_producto = $id_producto;

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 19-10-2019 a las 17:44:59
--- Versión del servidor: 5.7.26
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 30-11-2019 a las 19:37:59
+-- Versión del servidor: 10.4.10-MariaDB
+-- Versión de PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -133,12 +133,21 @@ INSERT INTO `persona` (`id_persona`, `nombres`, `apellidos`, `telefono`, `email`
 
 DROP TABLE IF EXISTS `producto`;
 CREATE TABLE IF NOT EXISTS `producto` (
-  `id_proyecto` int(11) NOT NULL,
   `id_producto` varchar(20) NOT NULL,
   `fecha` date NOT NULL,
   `categoria_producto` varchar(20) NOT NULL,
-  PRIMARY KEY (`id_proyecto`,`id_producto`)
+  PRIMARY KEY (`id_producto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `fecha`, `categoria_producto`) VALUES
+('1', '2019-11-15', 'Producto 1'),
+('2', '2019-11-27', 'Producto 2'),
+('3', '2019-11-19', 'Producto 3'),
+('4', '2019-11-27', 'Producto 4');
 
 -- --------------------------------------------------------
 
@@ -159,22 +168,25 @@ CREATE TABLE IF NOT EXISTS `proyecto` (
   `estado` varchar(20) NOT NULL,
   `observaciones` text NOT NULL,
   `tipo_proyecto` varchar(3) NOT NULL,
-  PRIMARY KEY (`id_proyecto`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `id_producto` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_proyecto`),
+  UNIQUE KEY `id_producto` (`id_producto`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `proyecto`
 --
 
-INSERT INTO `proyecto` (`id_proyecto`, `titulo`, `fechaInsc`, `fechaini`, `fechafin`, `cofinanciado`, `presupuesto`, `porccof`, `estado`, `observaciones`, `tipo_proyecto`) VALUES
-(1, 'hhhhhh', '2019-10-18', '2019-10-25', '2019-10-01', 'no', 56, 45, '132456789', '5', '6'),
-(2, 'hhhhhh', '2019-10-18', '2019-10-25', '2019-10-01', 'no', 56, 45, '132456789', '5', '6'),
-(3, 'asda', '2019-10-01', '2019-10-03', '2019-10-10', 'no', 123, 1231, 'asdasd', 'asd', 'as'),
-(4, '', '2019-10-01', '2019-10-03', '2019-10-10', 'no', 123, 1231, 'asdasd', 'asd', 'as'),
-(5, 'asd', '2019-10-01', '2019-10-01', '2019-10-10', 'no', 132, 231, 'ads', 'asd', 'asd'),
-(6, 'asdad', '2019-10-01', '2019-10-01', '2019-10-10', 'no', 132, 32, 'asd', 'asd', 'asd'),
-(7, 'asd', '2019-10-01', '2019-10-01', '2019-10-04', 'no', 123, 312, '2', '12', 'sda'),
-(8, 'asd', '2019-10-01', '2019-10-01', '2019-09-12', 'no', 123, 13, 'ads', 'asd', 'asd');
+INSERT INTO `proyecto` (`id_proyecto`, `titulo`, `fechaInsc`, `fechaini`, `fechafin`, `cofinanciado`, `presupuesto`, `porccof`, `estado`, `observaciones`, `tipo_proyecto`, `id_producto`) VALUES
+(1, 'hhhhhh', '2019-10-18', '2019-10-25', '2019-10-01', 'no', 56, 45, '132456789', '5', '6', NULL),
+(2, 'hhhhhh', '2019-10-18', '2019-10-25', '2019-10-01', 'no', 56, 45, '132456789', '5', '6', NULL),
+(3, 'asda', '2019-10-01', '2019-10-03', '2019-10-10', 'no', 123, 1231, 'asdasd', 'asd', 'as', NULL),
+(4, '', '2019-10-01', '2019-10-03', '2019-10-10', 'no', 123, 1231, 'asdasd', 'asd', 'as', NULL),
+(5, 'asd', '2019-10-01', '2019-10-01', '2019-10-10', 'no', 132, 231, 'ads', 'asd', 'asd', NULL),
+(6, 'asdad', '2019-10-01', '2019-10-01', '2019-10-10', 'no', 132, 32, 'asd', 'asd', 'asd', NULL),
+(7, 'asd', '2019-10-01', '2019-10-01', '2019-10-04', 'no', 123, 312, '2', '12', 'sda', NULL),
+(8, 'asd', '2019-10-01', '2019-10-01', '2019-09-12', 'no', 123, 13, 'ads', 'asd', 'asd', NULL),
+(12, 'uno', '2019-11-10', '2019-11-02', '2019-11-17', 'no', 123, 12, 'asd', 'asdasd', 'asd', '1');
 
 -- --------------------------------------------------------
 
@@ -227,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `usuario_sesion` (
 --
 
 INSERT INTO `usuario_sesion` (`id_persona`, `privilegios`, `usuario`, `clave`) VALUES
-('1', '', 'asd', '');
+('1', '', 'admin', 'admin123');
 
 --
 -- Restricciones para tablas volcadas
@@ -253,10 +265,10 @@ ALTER TABLE `estudiante`
   ADD CONSTRAINT `estudiante_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`);
 
 --
--- Filtros para la tabla `producto`
+-- Filtros para la tabla `proyecto`
 --
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`id_proyecto`) REFERENCES `proyecto` (`id_proyecto`);
+ALTER TABLE `proyecto`
+  ADD CONSTRAINT `proyecto_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
 
 --
 -- Filtros para la tabla `proyecto_financiado`
